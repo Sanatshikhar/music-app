@@ -1,0 +1,21 @@
+REQUIRMENTS
+
+FRONTEND:
+1. HTML
+2. CSS
+3. JavaScript
+4 . React
+
+
+BACKEND:
+1.	mongoDB
+2.	 Node.js
+3.	Express.js
+
+FEATURES
+
+1. Basic features- Play, Pause, Next, Previous,Repeat,Shuffle,Like.
+2. Playlist features- Creating Playlist, Editing Playlist, Deleting Playlist.
+3. Recommend songs and playlists sorted by Artists, Genres.
+4. Suggest songs based on listening history, daily/weekly mixes.
+5. Have a room for friends to chat and listen to music together.
