@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('nextButton');
 
     const songs = [
-        { name: '1989', file: '_Soulmate_64(PagalWorld.com.sb).mp3' },
-        { name: 'Lover', file: 'O Mahi O Mahi_64(PagalWorld.com.sb).mp3' },
-        { name: 'For You', file: 'O Sajni Re(PagalWorld.com.sb).mp3' }
+        { name: '1989', file: 'song1.mp3' },
+        { name: 'Lover', file: 'song2.mp3' },
+        { name: 'For You', file: 'song3.mp3' }
     ];
 
     let currentSongIndex = 0;
