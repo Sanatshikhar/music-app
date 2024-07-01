@@ -1,94 +1,41 @@
-import React from 'react';
-import './design.css';
-import Taylor1989 from './assets/Taylor1989.png';
-import TaylorLover from './assets/TaylorLover.jpeg';
-import SelenaForYou from './assets/SelenaForYou.png';
-import MusicPlayer from './components/MusicPlayer';
+document.addEventListener('DOMContentLoaded', function() {
+    const audioPlayer = new Audio(); // Create a new HTML5 audio element
+    const playPauseButton = document.getElementById('playPauseButton');
+    const prevButton = document.getElementById('prevButton');
+    const nextButton = document.getElementById('nextButton');
 
-const App = () => {
-  return (
-    <div>
-      <div className="navbar">
-        <ul className="nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Genres</a></li>
-          <li><a href="#">Your Profile</a></li>
-        </ul>
-      </div>
+    const songs = [
+        { name: '1989', file: '_Soulmate_64(PagalWorld.com.sb).mp3' },
+        { name: 'Lover', file: 'O Mahi O Mahi_64(PagalWorld.com.sb).mp3' },
+        { name: 'For You', file: 'O Sajni Re(PagalWorld.com.sb).mp3' }
+    ];
 
-      <div className="sidebar">
-        <ul className="sidebar-menu">
-          <li><a href="#">Playlists</a></li>
-          <li><a href="#">Podcasts</a></li>
-          <li><a href="#">Liked Songs</a></li>
-          <li><a href="#">Recently Played</a></li>
-        </ul>
-      </div>
+    let currentSongIndex = 0;
 
-      <div className="main-content">
-        <div className="content-header">
-          <h2>Featured Playlist</h2>
-        </div>
-        <div className="music-section">
-          <div className="album">
-            <img src={Taylor1989} alt="Album Art" />
-            <p>1989</p>
-          </div>
-          <div className="album">
-            <img src={TaylorLover} alt="Album Art" />
-            <p>Lover</p>
-          </div>
-          <div className="album">
-            <img src={SelenaForYou} alt="Album Art" />
-            <p>For You</p>
-          </div>
-        </div>
+    function playSong() {
+        audioPlayer.src = songs[currentSongIndex].file;
+        audioPlayer.play();
+    }
 
-        <div className="content-header">
-          <h2>Trending Songs</h2>
-        </div>
-        <div className="music-section">
-          <div className="album">
-            <img src={Taylor1989} alt="Album Art" />
-            <p>1989</p>
-          </div>
-          <div className="album">
-            <img src={TaylorLover} alt="Album Art" />
-            <p>Lover</p>
-          </div>
-          <div className="album">
-            <img src={SelenaForYou} alt="Album Art" />
-            <p>For You</p>
-          </div>
-        </div>
+    playPauseButton.addEventListener('click', function() {
+        if (audioPlayer.paused) {
+            audioPlayer.play();
+            playPauseButton.textContent = 'Pause';
+        } else {
+            audioPlayer.pause();
+            playPauseButton.textContent = 'Play';
+        }
+    });
 
-        <div className="content-header">
-          <h2>New Release</h2>
-        </div>
-        <div className="music-section">
-          <div className="album">
-            <img src={Taylor1989} alt="Album Art" />
-            <p>1989</p>
-          </div>
-          <div className="album">
-            <img src={TaylorLover} alt="Album Art" />
-            <p>Lover</p>
-          </div>
-          <div className="album">
-            <img src={SelenaForYou} alt="Album Art" />
-            <p>For You</p>
-          </div>
-        </div>
-      </div>
+    prevButton.addEventListener('click', function() {
+        currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
+        playSong();
+    });
 
-      <div className="footer">
-        <p>© 2024 EchoPlay </p>
-      </div>
+    nextButton.addEventListener('click', function() {
+        currentSongIndex = (currentSongIndex + 1) % songs.length;
+        playSong();
+    });
 
-      <MusicPlayer />
-    </div>
-  );
-};
-
-export default App;
+    playSong();
+});
