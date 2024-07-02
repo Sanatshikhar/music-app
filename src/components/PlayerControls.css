@@ -1,0 +1,22 @@
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .player-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .player-controls .active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .player-controls .liked {
+    color: red;
+  }
+  

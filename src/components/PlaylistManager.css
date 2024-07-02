@@ -1,0 +1,50 @@
+.playlist-manager {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .create-playlist,
+  .playlist-list,
+  .current-playlist {
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin-left: 5px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  li span {
+    cursor: pointer;
+  }
+  
+  .current-playlist ul {
+    margin-top: 10px;
+  }
+  
+  .current-playlist ul li {
+    padding-left: 20px;
+  }
+  
